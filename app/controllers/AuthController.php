@@ -74,7 +74,7 @@ private $UserModel ;
               $_SESSION['user_loged_in_nome'] = $user['nom_utilisateur'];
   
               if ($user && $role == 1) {
-                  header('Location: /admin/dashboard');
+                  header('Location: /admin');
               } else if ($user && $role == 2) {
                   header('Location: Client/dashboard.php');
               } else if ($user && $role == 3) {

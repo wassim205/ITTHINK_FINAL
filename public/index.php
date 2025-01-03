@@ -33,6 +33,7 @@ Route::get('/admin/users', [AdminController::class, 'handleUsers']);
 Route::get('/admin/categories', [AdminController::class, 'categories']);
 Route::get('/admin/testimonials', [AdminController::class, 'testimonials']);
 Route::get('/admin/projects', [AdminController::class, 'projects']);
+Route::post('/admin/delete', [AdminController::class, 'removeUser']);
 
 
 

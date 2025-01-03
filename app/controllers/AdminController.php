@@ -48,21 +48,14 @@ class AdminController extends BaseController {
     $this->renderDashboard('admin/users',["users"=> $users]);
    }
 
-    // function to remove user
-    // function removeUser($idUser){
-    //     include '../connection.php';
-    //     $removeUser = $conn->prepare("DELETE FROM utilisateurs WHERE id_utilisateur=?");
-    //     $removeUser->execute([$idUser]);
-    // }
+   public function removeUser(){
+       $id = $_POST['remove_user'];
+      //  var_dump($id);die();
+      $this->UserModel->remove($id);
+    $users = $this->UserModel->getAllUsers('all', '');
+    $this->renderDashboard('admin/users',["users"=> $users]);
+   }
     
-    // // check the post request to remove the user
-    // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['remove_user'])) {
-    //     $idUser = $_POST['remove_user'];
-    //     removeUser($idUser);
-    //     // Redirect to avoid form resubmission after page reload
-    //     header("Location: users.php");
-    //     exit();
-    // }
 
     // // function to block user
     // function changeStatus($idUser){
